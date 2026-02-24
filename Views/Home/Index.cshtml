@@ -1,10 +1,17 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
 <div class="text-center">
 
     <table>
+        <tr>
+            <td>
+                <div style="text-decoration:underline">Features</div>
+            </td>
+            <td>
+                <div style="text-decoration:underline">Psychotypes</div>
+            </td>
+        </tr>
         <tr>
             <td>
                 <table>
@@ -217,6 +224,29 @@
         </tr>
     </table>
 </div>
+
+<script>
+    // document.addEventListener("DOMContentLoaded", () => {
+    // Находим все строки с парами кнопок
+    const rows = document.querySelectorAll("td > table > tr");
+
+    rows.forEach(row => {
+        const buttons = row.querySelectorAll("button");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                // Убираем active у всех кнопок в этой строке
+                buttons.forEach(b => b.classList.remove("active"));
+
+                // Добавляем active на выбранную
+                btn.classList.add("active");
+            });
+        });
+    });
+    // });
+
+</script>
+
 @* | Code | Name        |
 | ---- | ----------- |
 | INTj | Robespierre |
